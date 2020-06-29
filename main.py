@@ -17,7 +17,7 @@ except ImportError:
     print(ImportError)
 # uvicorn main:app --reload
 
-pytesseract.pytesseract.tesseract_cmd = r"C:/Program Files/Tesseract-OCR/tesseract.exe"
+pytesseract.pytesseract.tesseract_cmd = r"Tesseract-OCR/tesseract.exe"
 
 app = FastAPI()
 
@@ -40,7 +40,7 @@ async def ocr(file: UploadFile = File(...)):
         texto = pytesseract.image_to_string(image, lang="por")  
         image.close()
     if file.content_type == "application/pdf":
-        images = convert_from_bytes(file.file.read(), poppler_path="D:/Downloads/poppler-0.68.0/bin")
+        images = convert_from_bytes(file.file.read(), poppler_path="poppler-0.68.0/bin")
         pagina = 1
         texto = list()
         for image in images:
