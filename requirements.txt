@@ -1,0 +1,7 @@
+fastapi
+io
+PIL
+requests
+pprint
+pytesseract
+pdf2image
