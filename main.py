@@ -15,10 +15,9 @@ try:
     )
 except ImportError:
     print(ImportError)
-# uvicorn main:app --reload
 
-pytesseract.pytesseract.tesseract_cmd = r"Tesseract-OCR/tesseract.exe"
-
+#pytesseract.pytesseract.tesseract_cmd = r"Tesseract-OCR/tesseract.exe"
+pytesseract.pytesseract.tesseract_cmd = "/app/.apt/usr/bin/tesseract"
 app = FastAPI()
 
 @app.post("/parse/image/teste")
