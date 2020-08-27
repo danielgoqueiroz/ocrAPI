@@ -20,6 +20,10 @@ except ImportError:
 pytesseract.pytesseract.tesseract_cmd = "/app/.apt/usr/bin/tesseract"
 app = FastAPI()
 
+@app.get("/")
+async def teste():
+    return "Api OCR no ar"
+
 @app.post("/parse/image/teste")
 async def ocr(file: UploadFile = File(...)):
     texto = 'teste'
