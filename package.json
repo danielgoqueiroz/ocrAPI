@@ -1,0 +1,26 @@
+{
+  "name": "ocr-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/danielgoqueiroz/ocrAPI.git"
+  },
+  "author": "danielgoqueiroz",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/danielgoqueiroz/ocrAPI/issues"
+  },
+  "homepage": "https://github.com/danielgoqueiroz/ocrAPI#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "http": "0.0.1-security",
+    "tesseract.js": "^2.1.1",
+    "tesseract.js-node": "^0.1.0"
+  }
+}
