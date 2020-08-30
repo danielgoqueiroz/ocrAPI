@@ -5,6 +5,8 @@ const morgan = require("morgan");
 const TMP_FOLDER = "uploads/";
 const fs = require("fs");
 const app = express();
+var cors = require("cors");
+app.use(cors());
 
 const PORT = 5000;
 
