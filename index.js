@@ -29,7 +29,6 @@ app.get("/", (req, res) => {
 
 app.post("/imagem", async (req, res) => {
   console.log("Requisição recebida.");
-  console.log(req.files.imagem);
   let imagem = null;
   try {
     if (!req.files) {
