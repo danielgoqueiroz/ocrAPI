@@ -53,13 +53,9 @@ app.post("/imagem", async (req, res) => {
       });
     }
   } catch (err) {
+    console.log("Erro na requisição");
     console.log(err);
     return res.status(500).send(err);
-  } finally {
-    if (fs.existsSync(TMP_FOLDER + imagem)) {
-      console.log("Removendo arquivo de imagem temporário");
-      fs.unlinkSync(TMP_FOLDER + imagem.name);
-    }
   }
 });
 
