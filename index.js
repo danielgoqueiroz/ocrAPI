@@ -9,6 +9,7 @@ const app = express();
 const PORT = 5000;
 
 const getWorker = require("tesseract.js-node");
+const { response } = require("express");
 
 app.use(
   fileUpload({
@@ -20,7 +21,11 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(morgan("dev"));
 
-app.post("/", async (req, res) => {
+app.get("/", (req, res) => {
+  res.status(200).send("Serviço rodando");
+});
+
+app.post("/imagem", async (req, res) => {
   console.log(req.files.imagem);
   let imagem = null;
   try {
