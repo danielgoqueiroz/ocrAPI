@@ -28,6 +28,7 @@ app.get("/", (req, res) => {
 });
 
 app.post("/imagem", async (req, res) => {
+  console.log("Requisição recebida.");
   console.log(req.files.imagem);
   let imagem = null;
   try {
@@ -37,12 +38,14 @@ app.post("/imagem", async (req, res) => {
         message: "imagem não enviada",
       });
     } else {
+      console.log("Carregando Tesseract");
       imagem = req.files.imagem;
       let dataInicial = new Date();
       const worker = await getWorker({
         tessdata: "./tessdata",
         languages: ["por"],
       });
+      console.log("Realizando reconhecimento");
       const text = await worker.recognize(imagem.data, "por");
       return res.send({
         text: text.replace(/\s+/g, " ").trim(),
