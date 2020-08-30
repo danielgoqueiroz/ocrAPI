@@ -38,8 +38,6 @@ app.post("/imagem", async (req, res) => {
       });
     } else {
       imagem = req.files.imagem;
-      imagem.mv(TMP_FOLDER + imagem.name);
-
       let dataInicial = new Date();
       const worker = await getWorker({
         tessdata: "./tessdata",
